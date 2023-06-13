@@ -3,19 +3,19 @@ pityPurple = 1
 
 def main():
     
-    jawab = int(input("Lakukan gacha berapa kali? : "))
-    for i in range(0, jawab):
+    ans = int(input("How many rolls? : "))
+    for i in range(0, ans):
         gacha()
         global pityPurple
         pityPurple += 1
 
-    jawab = input("Gacha lagi gak bang? ya / tidak : ").lower()
-    if jawab == "ya":
+    ans = input("Again or nah? yes / no : ").lower()
+    if ans == "yes":
         main()
-    elif jawab == "tidak":
-        print("ok bang")
+    elif ans == "no":
+        print("Keep gambling, you will win.")
     else:
-        print("wakaranai")
+        print("What")
 
 def gacha():
     chance = random.randint(1,100)
@@ -25,15 +25,15 @@ def gacha():
         pityPurple = 0
 
     if chance == 1:
-        print("Gokil dapet 5* Character (1%)")
+        print("GG! You got a 5* Character (1%)")
     elif chance <= 4:
-        print("Keren dapet 4* Character (3%)")
+        print("Cool, you got a 4* Character (3%)")
     elif chance <= 8:
-        print("Gokil dapet 5* Spell Card (4%)")
+        print("GG! You got a 5* Spell Card (4%)")
     elif chance <= 20:
-        print("Keren dapet 4* Spell Card (12%)")
+        print("Cool, you got a 4* Spell Card (12%)")
     elif chance <= 60:
-        print("Dapet 3* Character (40%)")
+        print("You got a 3* Character (40%)")
     elif chance <= 100:
-        print("Dapet 3* Spell Card (40%)")
+        print("You got a 3* Spell Card (40%)")
 main()
